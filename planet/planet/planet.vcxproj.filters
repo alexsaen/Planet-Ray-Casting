@@ -41,14 +41,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="shading.glsl">
-      <Filter>Shaders</Filter>
-    </None>
-    <None Include="planet.glsl">
-      <Filter>Shaders</Filter>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <Filter Include="Headers">
       <UniqueIdentifier>{eaff2780-daef-41fb-bf09-9e25df4e0986}</UniqueIdentifier>
     </Filter>
@@ -61,5 +53,13 @@
     <Filter Include="glp">
       <UniqueIdentifier>{1ea74f04-811a-49bf-b9b4-1b299ae67096}</UniqueIdentifier>
     </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\data\planet.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="..\..\data\shading.glsl">
+      <Filter>Shaders</Filter>
+    </None>
   </ItemGroup>
 </Project>

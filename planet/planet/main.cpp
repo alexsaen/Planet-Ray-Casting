@@ -32,15 +32,15 @@ static void key_callback(GLFWwindow* window, int key, int scancode, int action, 
 }  
 
 int main() {  
-
 	//Initialize GLFW  
+	glewExperimental = true; 
 	if (!glfwInit())  
 		exit(EXIT_FAILURE);  
 
 	//Set the GLFW window creation hints - these are optional  
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3); //Request a specific OpenGL version  
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3); //Request a specific OpenGL version  
-	glfwWindowHint(GLFW_SAMPLES, 1);   
+	glfwWindowHint(GLFW_SAMPLES, 4);   
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);  
 
 	GLFWwindow* window = glfwCreateWindow(1024, 640, "Planet Raycasting", NULL, NULL);  

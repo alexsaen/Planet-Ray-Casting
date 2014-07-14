@@ -6,7 +6,7 @@ interface VSOutput {
 	vec3	wpos;
 };
 
-const vec3 vertex[] = {
+const vec3 vertex[] = vec3[](
 	vec3(-1.0, -1.0, -1.0),
 	vec3( 1.0, -1.0, -1.0),
 	vec3(-1.0,  1.0, -1.0),
@@ -14,8 +14,8 @@ const vec3 vertex[] = {
 	vec3(-1.0, -1.0,  1.0),
 	vec3( 1.0, -1.0,  1.0),
 	vec3(-1.0,  1.0,  1.0),
-	vec3( 1.0,  1.0,  1.0),
-}; 
+	vec3( 1.0,  1.0,  1.0)
+); 
 
 shader VS(out VSOutput o) {
 	o.wpos = vertex[gl_VertexID];	
@@ -41,6 +41,7 @@ float rayIntersect(vec3 pos, vec3 dir, float radius, float outer) {
 }
 
 shader FS(in VSOutput i, out vec4 fragColor) {
+
 	vec3 ray = normalize(i.wpos - cameraPos);
 
 	float dist = rayIntersect(cameraPos, ray, 1, 1);
@@ -51,6 +52,7 @@ shader FS(in VSOutput i, out vec4 fragColor) {
 	vec3 normal = normalize(pos);
 		
 	fragColor = textureLod(cubeTex, normal, 0);
+
 } 
 
 program raycasting {
